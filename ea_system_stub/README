@@ -1,0 +1,3 @@
+- Compile a runnable Jar with "mvn package"
+- use run.sh to start the Stub Server
+- use the included scripts to configure selectivity and "fuzziness" of the generated data

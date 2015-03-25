@@ -1,0 +1,23 @@
+DrillBeyond
+===========
+
+This repository contains the Postgres-based implementation for the paper "DrillBeyond: Processing Multi-Result Open World SQL Queries".
+
+Compilation
+-----------
+Install in the same way as regular PostgreSQL.
+In addition to any requirements that standard PostgreSQL has, DrillBeyond needs libcurl and libjson-c.
+Newer versions of libjson-c may cause problems, manually install version 0.10 from https://github.com/json-c/json-c/releases in this case.
+
+
+Entity Augmentation Requirements
+-------------------------------
+As mentioned in the paper, DrillBeyond depends on REA (https://github.com/JulianEberius/REA) for its Entity Augmentation functions. However, it includes a simple stub that can be used to repeat the performance-related experiments (directory "ea_system_stub"). It will only return randomly generated data, but it can be configured to return data with a specific selectivity and "fuzziness" (lack of correlation between variants) with respect to a predicate, using the included scripts.
+
+To repeat all experiments in the paper, however, a full installation of REA is necessary.
+
+
+Evaluation
+---------
+
+The experiments in the paper can be repeated using the IPython notebooks (http://ipython.org/notebook.html) in the directory "eval". The notebook "drillbeyond_run_eval" contains the code to run the experiments, the one named "images" the code to generate the images and tables found in the paper.
